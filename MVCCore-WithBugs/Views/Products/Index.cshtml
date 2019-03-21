@@ -6,7 +6,11 @@
 
 <h1>Index</h1>
 
-<a asp-action="Index">Back to home page</a>
+<p>
+    <ul>
+        <li><a asp-action="Index" asp-controller="home">Back to home page</a></li>
+    </ul>
+</p>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -23,15 +27,16 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductPrice)
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductPrice)
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
